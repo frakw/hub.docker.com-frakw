@@ -14,7 +14,7 @@ build docker image
 ```
 compose image into container and start
 ```console
-./build.sh
+./compose.sh
 ```
 enter container
 ```console
