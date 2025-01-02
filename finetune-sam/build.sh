@@ -1,0 +1,1 @@
+docker build . -t frakw/finetune-sam:latest

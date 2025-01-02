@@ -1,0 +1,1 @@
+docker build . -t frakw/cat-sam:latest
