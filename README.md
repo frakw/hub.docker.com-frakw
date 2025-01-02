@@ -2,7 +2,7 @@
 Additional files such as docker-compose.yaml or Dockerfile for my docker hub repositories
 ## usage
 ```console
-cd <repo_name>
+cd repos/<repo_name>
 ```
 make `.sh` executable
 ```console
