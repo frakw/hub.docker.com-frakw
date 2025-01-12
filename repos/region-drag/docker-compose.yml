@@ -1,0 +1,30 @@
+services:
+    region_drag:
+        stdin_open: true
+        tty: true
+        devices:
+            - /dev/dri
+        group_add:
+            - video
+        volumes:
+            - /tmp/.X11-unix:/tmp/.X11-unix
+            - ./:/src
+        ports:
+            - "7860:7860"
+        deploy:
+            resources:
+                reservations:
+                    devices:
+                        - driver: nvidia
+                          count: all
+                          capabilities:
+                              - gpu
+        environment:
+            - DISPLAY=$DISPLAY
+            - QT_X11_NO_MITSHM=1
+            - NVIDIA_VISIBLE_DEVICES=all
+            - NVIDIA_DRIVER_CAPABILITIES=all
+        container_name: region-drag-container
+        build: .
+        image: frakw/region-drag
+        command: /bin/bash
