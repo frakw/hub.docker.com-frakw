@@ -1,0 +1,9 @@
+torch==2.0.0
+torchvision==0.15.1
+gradio==3.41.1
+opencv_python==4.7.0.68
+opencv-contrib-python==4.7.0.68
+diffusers==0.25.1
+accelerate==0.17.0
+transformers==4.27.0
+huggingface_hub==0.23.5
