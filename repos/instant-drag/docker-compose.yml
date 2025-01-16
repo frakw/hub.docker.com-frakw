@@ -1,0 +1,28 @@
+services:
+    instant_drag:
+        stdin_open: true
+        tty: true
+        devices:
+            - /dev/dri
+        ports:
+            - 7861:7860
+        volumes:
+            - ./:/src
+        deploy:
+            resources:
+                reservations:
+                    devices:
+                        - driver: nvidia
+                          count: all
+                          capabilities:
+                              - gpu
+        environment:
+            - QT_X11_NO_MITSHM=1
+            - NVIDIA_VISIBLE_DEVICES=all
+            - NVIDIA_DRIVER_CAPABILITIES=all
+        container_name: instant-drag-container
+        build: .
+        image: frakw/instant-drag
+        command: /bin/bash
+        shm_size: 16G
+        ipc: host
