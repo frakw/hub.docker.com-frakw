@@ -1,0 +1,4 @@
+docker build . -t frakw/geo-diffuser:latest
+docker compose up -d
+docker exec -it geo-diffuser-container /bin/bash
+CUDA_VISIBLE_DEVICES=0 python3 geo_diff_ui.py
